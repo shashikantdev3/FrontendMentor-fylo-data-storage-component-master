@@ -83,6 +83,7 @@ main{
    /*  background-attachment: fixed; */
     background-repeat: no-repeat;
     place-content: center;
+    margin-top: 2rem;
 }
 
 .fist__card{
