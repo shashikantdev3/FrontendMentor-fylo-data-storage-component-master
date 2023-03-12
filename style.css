@@ -1,0 +1,271 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application BUT this cause problem to mobile layout if you give max-width in pixel. So better comment it.
+  */
+  html, body {
+    /* height: 100%;  */
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+/* Custom Properties */
+:root{
+    --clr-gradient_1 : hsl(6, 100%, 80%);
+    --clr-gradient_2 : hsl(335, 100%, 65%);
+    
+    /* neutral */
+    --clr-pale-blue : hsl(243, 100%, 93%);
+    --clr-grayish-blue :  hsl(229, 7%, 55%);
+    --clr-dark-blue : hsl(228, 56%, 26%);
+    --clr-very-dark-blue : hsl(229, 57%, 11%);
+
+    /* Font size */
+    --fs: 0.875rem;
+
+    /* Font family */
+    --ff-accent: 'Raleway', sans-serif;
+}
+
+/* General Styling */
+body{
+  font-family: var(--ff-accent);
+  font-size: var(--fs);
+  background-color: var(--clr-dark-blue);
+  background-image: url(./images/bg-mobile.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  display: grid;
+  place-content: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+
+.fist__card{
+    display: grid;
+    gap: 1rem;
+    padding: 2.5rem;
+    margin: 8rem 2rem 1rem 2rem;
+    background-color: var(--clr-dark-blue);
+    border-top-right-radius: 5rem;
+}
+
+.flex-card{
+    display: flex;
+    gap: 1rem;
+}
+
+.icons img{
+    padding: 0.75rem;
+    max-height: 2.5rem;
+    max-width: 2.5rem;
+    background-color: var(--clr-very-dark-blue);
+    border-radius: 0.5rem;
+}
+
+
+.second__card{
+    display: grid;
+    gap: 1rem;
+    padding: 2.5rem;
+    margin: 0 2rem 2rem 2rem;
+    background-color: var(--clr-dark-blue);
+    border-radius: 1rem;
+}
+
+.data__used{
+    color: var(--clr-grayish-blue);
+}
+
+p > span{
+    font-weight: 900;
+}
+
+.meter{
+    min-width: 235px;
+    height: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--clr-very-dark-blue);
+    padding-top: 0.25rem;
+    padding-left: 0.25rem;
+}
+
+.gradient-fill{
+    max-width: 200px;
+    height: 1rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(hsl(6, 100%, 80%),hsl(335, 100%, 65%));
+}
+
+.circle{
+    background-color: white;
+    width: 12px;
+    height: 0.8rem;
+    border: 1px solid red;
+    margin: 0 0 0 186px;
+    border-radius: 0.8rem;
+    position: relative;
+    top: -75%;
+}
+
+.limit-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--clr-grayish-blue);
+    font-weight: 700;
+}
+
+.data-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 60%;
+    min-height: 4rem;
+    background-color: white;
+    position: relative;
+    top: 45%;
+    left: 22%;
+    border-radius: 0.5rem;
+
+}
+
+.data-left>.number{
+    color: var(--clr-very-dark-blue);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.data-left>.text{
+    color: var(--clr-grayish-blue);
+    text-align: center;
+    font-weight: 700;
+}
+
+@media (min-width:50rem) {
+
+    body{
+        background-image: url(./images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom;
+        background-color: var(--clr-very-dark-blue);
+        margin-top: 12%;
+
+    }
+
+    main{
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+        align-items: baseline;
+
+
+    }
+
+    .fist__card{
+        display: grid;
+        gap: 1rem;
+        padding: 2rem 8rem 2rem 2rem;
+        background-color: var(--clr-dark-blue);
+        border-top-right-radius: 5rem;
+    }
+
+    .second__card{
+        display: grid;
+        gap: 1rem;
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        background-color: var(--clr-dark-blue);
+        max-height: 120px;
+        border-radius: 0.5rem;
+    }
+
+    .meter{
+        min-width: 400px;
+        height: 1.5rem;
+        margin: 0.5rem 0 0.5rem;
+        border-radius: 1rem;
+        background-color: var(--clr-very-dark-blue);
+        padding-top: 0.25rem;
+        padding-left: 0.25rem;
+    }
+
+    .gradient-fill{
+        max-width: 320px;
+    }
+    
+    .circle{
+        background-color: white;
+        margin-left: 307px;
+    }
+
+    .data-left{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        max-width: 40%;
+        /* padding: 0 1rem; */
+        border-radius: 0.5rem;
+        position: relative;
+        top: -100%;
+        left: 60%;
+        border-radius: 0.5rem 0.5rem 0 0.5rem;
+    }
+
+    .data-left::after{
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 85%;
+        width: 0;
+        border-top: 1.5rem solid white;
+        border-left: 1.5rem solid transparent;
+    }
+
+    
+}
