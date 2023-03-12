@@ -193,7 +193,7 @@ p > span{
         background-attachment: fixed;
         background-position: bottom;
         background-color: var(--clr-very-dark-blue);
-        margin-top: 12%;
+       /*  margin-top: 12%; */
 
     }
 
