@@ -18,7 +18,8 @@ This is a solution to the [Fylo data storage component challenge on Frontend Men
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot-mobile.png)
+![](./screenshot-desktop.png)
 
 
 ### Links
